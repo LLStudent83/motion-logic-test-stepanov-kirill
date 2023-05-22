@@ -22,6 +22,8 @@ interface TableProps {
 const mergedInputClassname = clsx('input', styles.inputToPage);
 
 function Table({ data, onDelete }: TableProps) {
+  console.log('Table rerenders');
+
   const columns: ColumnDef<CityT>[] = [
     {
       id: 'delete',

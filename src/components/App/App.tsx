@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row } from '@tanstack/react-table';
-
+// import Component from '../Components';
 import styles from './App.module.scss';
 import CustomSearchableSelect from '../CustomSearchableSelect/CustomSearchableSelect';
 import useGetCities from '../../utils/useGetCities';
@@ -11,6 +11,7 @@ import { CityT } from '../../types';
 
 function App() {
   const cities = useGetCities();
+  console.log('App rerenders');
 
   const [tableResults, setTableResults] = React.useState<CityT[]>([]);
 
@@ -74,3 +75,13 @@ function App() {
 }
 
 export default App;
+
+/*
+1. useGetCities нут обработки ошибки с бека в в 11 строке. Попросить расссказать
+как можно обработать ошибку
+2. App строка 18 для чего проверка "item.id || ''"
+3. Для чего применяется useCallback в 32 строке
+4. Что будет если забыть указать зависимость в useCallack
+5. Какие пути оптимизации useEffect вы знаете
+6. Для чего в Button "Button.defaultProps"
+*/
